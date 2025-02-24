@@ -2,74 +2,459 @@
 <html lang="Ru">
 @include('partials/head.html')
 
-<body>
-  @include('partials/header-contacts.html')
+<body class="contacts">
+
+  @include('partials/header.html')
 
   <main>
-    <section class="hero-section hero-section--contacts">
-      <div class="hero-section__image" >
+    <ul class="breadcrumbs">
+      <li>
+        <a href="/">Главная</a>
+      </li>
+      <li>Contacts</li>
+    </ul>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-section__box">
+          <h1 class="title">Сontacts</h1>
+          <div class="contact-section__wrapp">
+            <div class="contact-section__map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2036.0902508210656!2d18.049882777853057!3d59.314749912186926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77e8598c3965%3A0x8a2b780f0219e967!2zTWFyaWEgQmFuZ2F0YSAxMjMsIDExOCA1MyBTdG9ja2hvbG0sINCo0LLQtdGG0ZbRjw!5e0!3m2!1suk!2sua!4v1740405817291!5m2!1suk!2sua"
+                width="1660" height="556" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="contact-section__inner">
+              <ul class="contact-section__list">
+                <li class="contact-section__item">
+                  <a href="mailto:forwardtransport@gmail.com" class="contact-section__link">
+                    <svg width='29' height='18'>
+                      <use href='img/sprite/sprite.svg#mess'></use>
+                    </svg>
+                    forwardtransport@gmail.com
+                  </a>
+                </li>
+                <li class="contact-section__item">
+                  <a href="tel:380442997545" class="contact-section__link">
+                    <svg width='29' height='18'>
+                      <use href='img/sprite/sprite.svg#tel'></use>
+                    </svg>
+                    +38 (046) 299-75-45
+                  </a>
+                </li>
+                <li class="contact-section__item">
+                  <a href="mailto:forwardtransport@gmail.com" class="contact-section__link">
+                    <svg width='29' height='18'>
+                      <use href='img/sprite/sprite.svg#geo'></use>
+                    </svg>
+                    Stockholm, street Marina Bangata 123
+                  </a>
+                </li>
+                <li class="contact-section__item">
+                  <span class="contact-section__time">
+                    <svg width='29' height='18'>
+                      <use href='img/sprite/sprite.svg#time'></use>
+                    </svg>
+                    <b>Mon-Fri: 8:00-16:00</b>
+                    <b>Sat-Sun: 8:00-14:00</b>
+                  </span>
+                </li>
+              </ul>
+
+              <ul class="socials">
+                <li class="socials__item">
+                  <a class="socials__link" href="#">
+                    <svg width='31' height='30'>
+                      <use href='img/sprite/sprite.svg#fb2'></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link" href="#">
+                    <svg width='31' height='30'>
+                      <use href='img/sprite/sprite.svg#inst2'></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link" href="#">
+                    <svg width='31' height='30'>
+                      <use href='img/sprite/sprite.svg#youtube2'></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+
+              <a href="#" class="main-btn"><span>get a quote</span>
+                <span class="main-btn__icon">
+                  <svg width='17' height='16'>
+                    <use href='img/sprite/sprite.svg#arrow'></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="contacts-section">
+      <div class="contacts-section__bg">
         <picture>
-          <source type='image/webp' srcset='img/index/bg.webp'>
-          <img width='1920' height='930' src='img/index/bg.png' alt='image'>
+          <source type='image/webp' srcset='img/index/bg-contact.webp'>
+          <img width='1660' height='476' src='img/index/bg-contact.png' alt='image'>
         </picture>
       </div>
+
       <div class="container">
-        <div class="hero-section__box">
-          <div class="main-top">
-            <div class="editor">
-              <h1>Контактна інформація</h1>
-              <h3>Ми раді кожному вашому зверненню!</h3>
-              <p>Завжди готові допомогти вам вибрати продукцію та запропонувати вигідні умови для співпраці. Наша команда надасть професійну консультацію та допоможе обрати макаронні вироби з нашого асортименту.</p>
-            </div>
-          </div>  
+        <div class="contacts-section__box">
+          <h2 class="title">Contact us</h2>
+
+          <form class="contacts-form">
+            <label for="name" class="contacts-form__label">
+              <span class="contacts-form__title">Name*</span>
+              <input type="text" class="contacts-form__input" name="name" id="name" value="Andre">
+            </label>
+            <label for="mail" class="contacts-form__label">
+              <span class="contacts-form__title">E-mail*</span>
+              <input type="email" class="contacts-form__input" name="mail" id="mail" value="Berezhna@gmail.com">
+            </label>
+            <label for="tel" class="contacts-form__label">
+              <span class="contacts-form__title">Phone*</span>
+              <input type="tel" class="contacts-form__input" name="tel" id="tel" value="+38 (046) 299-75-45">
+            </label>
+            <label for="mess" class="contacts-form__label">
+              <span class="contacts-form__title">Your question</span>
+              <textarea name="mess" id="mess" class="contacts-form__area"></textarea>
+            </label>
+
+            <button class="main-btn main-btn--transparent"><span>skicka</span>
+              <span class="main-btn__icon">
+                <svg width='17' height='16'>
+                  <use href='img/sprite/sprite.svg#arrow'></use>
+                </svg>
+              </span>
+            </button>
+          </form>
         </div>
       </div>
     </section>
 
-   
-
- 
-    <section class="order-section">
+    <section class="cities-section">
       <div class="container">
-        <div class="order-section__box">
-          <div class="main-top">
-            <div class="editor">
-              <h2>Залиште заявку</h2>
-              <p>і ми обов’язково зв'яжемося з вами найближчим часом</p>
-            </div>
-          </div>
+        <div class="cities-section__box">
+          <h2 class="title">Här finns vi </h2>
 
-          <div class="wpcf7">
-            <form class="main-form" aria-label="Order form">
-
-              <label class="main-form__label" for="name">
-                <input class="main-form__input" id="name" name="name" placeholder="Ваше ім’я та прізвище" type="text">
-              </label>
-
-              <label class="main-form__label" for="mail">
-                <input class="main-form__input" id="mail" name="mail" placeholder="Ваш email" type="email">
-              </label>
-
-              <label class="main-form__label" for="phone">
-                <input class="main-form__input" id="phone" name="phone" placeholder="Телефон" type="tel">
-              </label>
-
-              <label class="main-form__label" for="mess">
-                <textarea class="main-form__mess" name="mess" id="mess" placeholder="Текст повідомлення"></textarea>
-              </label>
-
-              <button class="main-btn">
-                Надіслати
-                <svg width='24' height='24'>
-                  <use href='img/sprite/sprite.svg#arrow-right'></use>
+          <ul class="cities-section__acc" data-single='true' data-breakpoint='576' data-accordion-init>
+            <li class='cities-section__acc-item'>
+              <button class='cities-section__acc-btn' data-id='1'>Районы Стокгольма
+                <svg width='18' height='21'>
+                  <use href='img/sprite/sprite.svg#arrow-r'></use>
                 </svg>
               </button>
-            </form>
+
+              <div class='cities-section__acc-content' data-content='1'>
+                <div class="main-city">
+                  <span class="main-city__title">Районы Стокгольма</span>
+
+                  <ul class="main-city__list" data-simplebar>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Bromma
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Östermalm
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Södermalm
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Vasastaden
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Årsta
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Mälarhöjden
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Farsta
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Hägersten
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Liljehöjden
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Märsta
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Hammarby Sjöstad
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Flemingsberg
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Vällingby
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Hässelby
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Kungsholmen
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Kungsholmen
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class='cities-section__acc-item'>
+              <button class='cities-section__acc-btn' data-id='2'>Коммуны Швеции
+                <svg width='18' height='21'>
+                  <use href='img/sprite/sprite.svg#arrow-r'></use>
+                </svg>
+              </button>
+
+              <div class='cities-section__acc-content' data-content='2'>
+                <div class="main-city">
+                  <span class="main-city__title">Коммуны Швеции</span>
+
+                  <ul class="main-city__list" data-simplebar>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Norrtälje
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Vallentuna
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Sigtuna
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Österåker
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Upplands-Väsby
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Upplands-Bro
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Täby
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Sollentuna
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Järfälla
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Vaxholm
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Danderyd
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Sundbyberg
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Lidingö
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Solna
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Ekerö
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="main-city__item">
+                      <a href="#" class="main-city__link">
+                        Nacka
+                        <svg width='15' height='15'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="cities-section__wrapp">
+            <span class="cities-section__subtitle">территория с фиксированной стоимостью</span>
+            <p>также предоставляются услуги по переезду в более отдаленные регионы за дополнительную плату за расстояние
+            </p>
+          </div>
+
+
+          <div class="cities-section__map">
+            <svg width='758' height='818'>
+              <use href='img/sprite/sprite.svg#map'></use>
+            </svg>
           </div>
         </div>
       </div>
     </section>
-   
+
   </main>
 
   @include('partials/footer.html')

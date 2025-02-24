@@ -6,6 +6,12 @@
   @include('partials/header-blog.html')
 
   <main>
+    <ul class="breadcrumbs">
+      <li>
+        <a href="/">Главная</a>
+      </li>
+      <li>Blog</li>
+    </ul>
 
     <section class="news-section">
       <div class="container">
@@ -18,7 +24,7 @@
                 <input type="text" class="search-form__input" name="search" id="search" placeholder="я ищу">
               </label>
 
-              <button>
+              <button class="search-form__btn">
                 <svg width='24' height='24'>
                 <use href='img/sprite/sprite.svg#search'></use>
                 </svg>
@@ -274,7 +280,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   @include('partials/footer.html')
