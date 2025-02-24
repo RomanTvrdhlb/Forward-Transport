@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="Ru">
+@include('partials/head.html')
+
+<body>
+  @include('partials/header-contacts.html')
+
+  <main>
+    <section class="hero-section hero-section--contacts">
+      <div class="hero-section__image" >
+        <picture>
+          <source type='image/webp' srcset='img/index/bg.webp'>
+          <img width='1920' height='930' src='img/index/bg.png' alt='image'>
+        </picture>
+      </div>
+      <div class="container">
+        <div class="hero-section__box">
+          <div class="main-top">
+            <div class="editor">
+              <h1>Контактна інформація</h1>
+              <h3>Ми раді кожному вашому зверненню!</h3>
+              <p>Завжди готові допомогти вам вибрати продукцію та запропонувати вигідні умови для співпраці. Наша команда надасть професійну консультацію та допоможе обрати макаронні вироби з нашого асортименту.</p>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
+
+   
+
+ 
+    <section class="order-section">
+      <div class="container">
+        <div class="order-section__box">
+          <div class="main-top">
+            <div class="editor">
+              <h2>Залиште заявку</h2>
+              <p>і ми обов’язково зв'яжемося з вами найближчим часом</p>
+            </div>
+          </div>
+
+          <div class="wpcf7">
+            <form class="main-form" aria-label="Order form">
+
+              <label class="main-form__label" for="name">
+                <input class="main-form__input" id="name" name="name" placeholder="Ваше ім’я та прізвище" type="text">
+              </label>
+
+              <label class="main-form__label" for="mail">
+                <input class="main-form__input" id="mail" name="mail" placeholder="Ваш email" type="email">
+              </label>
+
+              <label class="main-form__label" for="phone">
+                <input class="main-form__input" id="phone" name="phone" placeholder="Телефон" type="tel">
+              </label>
+
+              <label class="main-form__label" for="mess">
+                <textarea class="main-form__mess" name="mess" id="mess" placeholder="Текст повідомлення"></textarea>
+              </label>
+
+              <button class="main-btn">
+                Надіслати
+                <svg width='24' height='24'>
+                  <use href='img/sprite/sprite.svg#arrow-right'></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+  </main>
+
+  @include('partials/footer.html')
+  @include('partials/modals.html')
+  <script defer src="js/main.js"></script>
+</body>
+
+
+</html>

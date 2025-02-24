@@ -1,0 +1,51 @@
+.prices-section {
+  margin-bottom: clamp(70px, 5.9155vw, 84px);
+
+  @include desktop {
+    @include for-tablet {
+      margin-bottom: clamp(50px, 4.9296vw, 70px);
+    }
+  }
+
+  @include tablet {
+    margin-bottom: clamp(30px, 4.883vw, 50px);
+  }
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(70px, 5.9859vw, 85px);
+
+    @include desktop{
+        gap: clamp(50px, 4.9296vw, 70px);
+    }
+
+    @include tablet{
+        grid-gap: clamp(24px, 4.883vw, 50px);
+    }
+  }
+
+  &__nav{
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(20px, 1.6901vw, 24px);
+
+    @include desktop{
+        @include for-mobile{
+            grid-gap: clamp(14px, 1.4085vw, 20px);
+        }
+    }
+  }
+
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    gap: 27px;
+
+    @include mobile{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.about-section {
+  margin-bottom: clamp(45px, 4.1667vw, 60px);
+  
+  &__box {
+    display: flex;
+    flex-direction: column;
+    grid-gap: clamp(25px, 4.1667vw, 60px);
+  }
+
+
+  .container{
+      max-width: 100%;
+      padding: 0;
+  }
+
+  & + .cta-section{
+    margin-top: calc(clamp(45px, 4.1667vw, 60px) * -1);
+  }
+
+  
+ 
+}

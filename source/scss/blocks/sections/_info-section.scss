@@ -1,0 +1,32 @@
+.info-section{
+    padding: 0 0 clamp(30px, 4.1667vw, 60px);
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(25px, 4.1667vw, 60px);
+
+        .main-top{
+           align-items: center;
+           text-align: center; 
+        }
+    }
+
+    & + .history-section{
+        margin-top: calc(clamp(30px, 4.1667vw, 60px) * -1);
+    }
+
+    & + .faq-section{
+        @include for-mobile{
+            padding-bottom: clamp(30px, 4.1667vw, 60px);
+        }
+    }
+
+    & + .about-section{
+        margin-top: calc(clamp(30px, 4.1667vw, 60px) * -1);
+    }
+
+    & + .news-section{
+        margin-top: calc(clamp(30px, 4.1667vw, 60px) * -1);
+    }
+}

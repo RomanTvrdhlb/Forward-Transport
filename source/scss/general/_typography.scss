@@ -1,0 +1,343 @@
+.title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(80px, 6.338vw, 90px);
+  color: var(--grey);
+
+  @include for-desktop {
+    line-height: 111%;
+  }
+
+  @include desktop {
+    line-height: 125%;
+    font-size: clamp(45px, 5.6338vw, 80px);
+  }
+
+  @include tablet {
+    line-height: 107%;
+  }
+}
+
+.pretitle {
+  color: var(--grey);
+  font-family: var(--second-family);
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+
+  @include for-desktop {
+    line-height: 103.333%;
+  }
+
+  @include desktop {
+    @include for-tablet {
+      font-size: 50px;
+      line-height: 120%;
+      font-size: clamp(20px, 3.5211vw, 50px);
+    }
+  }
+
+  @include tablet {
+    @include for-mobile {
+      font-size: 20px;
+      line-height: 106.667%;
+    }
+  }
+
+  @include mobile {
+    font-size: 32px;
+    line-height: 30px;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  @include desktop {
+    @include for-tablet {
+      gap: 6px;
+    }
+  }
+
+  @include tablet {
+    @include for-mobile {
+      gap: 4px;
+    }
+  }
+
+  @include mobile {
+    gap: 6px;
+  }
+
+  &__star {
+    width: 19px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-shrink: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='18' fill='none'%3E%3Cpath fill='%2388A795' d='m10.157 14.47 5.87 3.53-1.558-6.662 5.183-4.472-6.834-.592L10.157 0l-2.67 6.283-6.835.582 5.184 4.473L4.278 18l5.879-3.53Z'/%3E%3C/svg%3E");
+
+    &.fill {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='18' fill='none'%3E%3Cpath stroke='%2388A795' d='m10.632 14.042-.258-.155-.257.155-4.866 2.92 1.289-5.51.069-.295-.23-.198-4.283-3.696 5.65-.481.3-.026.118-.277 2.21-5.2 2.201 5.19.118.277.3.026 5.652.49-4.285 3.697-.23.198.07.295 1.288 5.51-4.856-2.92Z'/%3E%3C/svg%3E");
+    }
+
+    @include desktop {
+      @include for-tablet {
+        width: clamp(11px, 1.1268vw, 16px);
+      }
+    }
+
+    @include tablet {
+      @include for-mobile {
+        width: 11px;
+      }
+    }
+
+    @include mobile {
+      width: 15px;
+    }
+  }
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(24px, 1.9531vw, 30px);
+  line-height: 130%;
+  text-transform: uppercase;
+  color: var(--cl-c);
+}
+
+.search-form {
+  background-color: var(--bg-a);
+  border-radius: clamp(4px, 0.5208vw, 8px);
+  padding: 12px 24px 12px 48px;
+  max-width: 472px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  label {
+    width: 100%;
+  }
+
+  button {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 24px;
+    height: 24px;
+    display: flex;
+
+    svg {
+      transition: all 0.3s;
+      width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  input {
+    text-overflow: ellipsis;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;
+    letter-spacing: 0.03em;
+    color: var(--cl-f);
+
+    &::placeholder {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 133%;
+      letter-spacing: 0.03em;
+      color: var(--cl-f);
+    }
+  }
+}
+
+.blog-labels {
+  display: flex;
+  align-items: center;
+  grid-gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__item {
+    width: fit-content;
+    height: fit-content;
+    background: rgba(28, 137, 188, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cl-c);
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    border-radius: 30px;
+    padding: 2px 14px 6px 14px;
+  }
+}
+
+.date {
+  display: inline-flex;
+  align-items: center;
+  grid-gap: 9px;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--cl-g);
+
+  i {
+    font-style: normal;
+    display: inline-flex;
+    align-items: center;
+    grid-gap: 8px;
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 100%;
+      background: var(--bg-h);
+      display: block;
+      pointer-events: none;
+    }
+  }
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+
+  &__btn {
+    @include for-tablet {
+      display: none;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    width: 48px;
+    border-radius: 100%;
+    background-color: var(--bg-d);
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      background-color: var(--bg-c);
+    }
+
+    svg,
+    img {
+      transition: all 0.3s;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-image: var(--close);
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    &.active {
+      svg,
+      img {
+        opacity: 0;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .socials {
+    flex-direction: column;
+
+    @include tablet {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    &.active {
+      @include tablet {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &__item {
+      &:nth-child(2) {
+        .socials__icon {
+          svg,
+          img {
+            width: 18px;
+          }
+        }
+      }
+    }
+
+    &__link {
+      width: 48px;
+      border-color: var(--br-b);
+
+      &:hover {
+        .socials__icon {
+          color: var(--cl-a);
+        }
+      }
+
+      @include tablet {
+        background-color: var(--bg-a);
+      }
+    }
+
+    &__icon {
+      width: 22px;
+      color: var(--cl-d);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    color: var(--cl-c);
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
