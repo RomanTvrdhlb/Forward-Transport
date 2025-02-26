@@ -145,10 +145,6 @@
     b{
         font-weight: 400;   
     }
-    
-    &:hover{
-        color: var(--green-2);
-    }
 
     @include desktop {
         @include for-tablet {

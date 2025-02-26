@@ -191,7 +191,7 @@
     }
 
     @include mobile {
-        font-size: 56px;
+      font-size: 56px;
     }
   }
 
@@ -201,7 +201,7 @@
     border-radius: clamp(20px, 1.6901vw, 24px);
     background: var(--light-gray);
     padding: clamp(20px, 1.6901vw, 24px) clamp(20px, 1.6901vw, 24px) 29px;
-    gap: 24px;
+    gap: 17px;
 
     @include desktop {
       @include for-tablet {
@@ -229,25 +229,173 @@
     }
   }
 
-  .main-btn{
-    min-width: 264px;
-    align-self: center;
+  &__pretitle{
+    color: var(--grey);
+    font-family:  var(--second-family);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 144.444%;
 
     @include desktop{
-        @include for-tablet{
-            min-width: 223px;
-        }
+      @include for-tablet{
+        font-size: 16px;
+        line-height: 150%;
+      }
     }
 
     @include tablet{
-        @include for-mobile{
-            min-width: 164px;
-        }
+      @include for-mobile{
+        font-size: 13px;
+        line-height: 131.294%;
+      }
     }
 
     @include mobile{
-        min-width: 207px;
+      font-size: 14px;
+      line-height: 15.797px;
+    }
+  }
+
+  &__deskr {
+    color: var(--grey);
+    font-family: var(--second-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    display: inline-flex;
+    gap: 8px;
+    max-width: 80%;
+
+    @include desktop {
+      @include for-mobile {
+        font-size: clamp(10px, .9859vw, 14px);
+        gap: 7px;
+      }
     }
 
+    @include tablet {
+      @include for-mobile {
+        gap: 5px;
+        font-size: 10px;
+      }
+    }
+
+    @include mobile {
+      gap: 3px;
+      font-size: 14px;
+    }
+
+    &::before {
+      content: "*";
+      color: var(--grey);
+      font-family: var(--second-family);
+      font-size: 19.246px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      display: block;
+      padding-top: 2px;
+
+      @include desktop {
+        @include for-tablet {
+          font-size: clamp(12px, 1.1268vw, 16px);
+        }
+        padding-top: clamp(2px, .2113vw, 3px);
+      }
+
+      @include tablet {
+        @include for-mobile {
+          font-size: 11.379px;
+        }
+      }
+
+      @include mobile {
+        font-size: 14.042px;
+      }
+    }
+  }
+
+  ul:not([class]){
+
+    li{
+      display: flex;
+      align-items: center;
+      color: var(--grey);
+      font-family:  var(--second-family);
+      font-size: clamp(16px, 1.084vw, 18px);
+      font-style: normal;
+      font-weight: 300;
+      line-height: 144.444%;
+      gap: 10px;
+
+      &::before{
+        display: block;
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background: var(--grey);
+        position: relative;
+        flex-shrink: 0;
+
+        @include desktop{
+          width: clamp(4px, .3521vw, 5px);
+          height: clamp(4px, .3521vw, 5px);
+        }
+
+        @include tablet{
+          width: 4px;
+          height: 4px;
+        }
+      }
+
+      @include desktop {
+        @include for-tablet {
+          font-size: clamp(12px, 1.1268vw, 16px);
+          gap: 8px;
+          line-height: 112.5%;
+        }
+      }
+  
+      @include tablet {
+        @include for-mobile {
+          font-size: 12px;
+          line-height: 133.333%;
+        }
+      }
+  
+      @include mobile {
+        gap: 7px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .main-btn {
+    min-width: 264px;
+    align-self: center;
+    margin: 48px 0 13px;
+
+    @include desktop {
+      @include for-tablet {
+        margin: 43px 0 0;
+        min-width: 223px;
+      }
+    }
+
+    @include tablet {
+      @include for-mobile {
+        margin: 18px 0 3px;
+        min-width: 164px;
+      }
+    }
+
+    @include mobile {
+      margin: 16px 0 7px;
+      min-width: 207px;
+    }
   }
 }

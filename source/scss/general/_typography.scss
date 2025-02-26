@@ -287,7 +287,15 @@ body.contacts{
   }
 }
 
+body.home{
+  @include tablet{
+    --container-offset: 21px;
+  }
 
+  @include mobile{
+    --container-offset: 10px;
+  }
+}
 
 
 

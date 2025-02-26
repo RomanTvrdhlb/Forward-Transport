@@ -242,36 +242,114 @@
   }
 }
 
+
+
 .transparent-btn {
   transition: all 0.4s;
-  height: 59px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 55px;
-  grid-gap: 10px;
-  width: fit-content;
-  padding: 18px clamp(20px, 1.9444vw, 28px) 15px;
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: clamp(16px, 1.3889vw, 20px);
-  color: var(--cl-d);
-  border: solid 1.5px var(--br-a);
-  background: transparent;
-  outline: 0.5px solid transparent;
+  border-radius: 48px;
+  border: 1px solid var(--white);
+  box-shadow: 1.203px 1.203px 1.203px 0px rgba(255, 255, 255, 0.30) inset;
+  backdrop-filter: blur(19.24637794494629px);
+  height: 60px;
+  gap: 6px;
+  padding: 20px 55px;
 
-  img,
-  svg {
-    position: relative;
-    top: -2px;
+  @include desktop {
+    @include for-tablet {
+      gap: 10px;
+      height: 55px;
+      border-radius: 40px;
+      box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.30) inset;
+      backdrop-filter: blur(16px);
+      padding: 20px 33px;
+    }
+  }
+
+  @include tablet{
+    @include for-mobile{
+      height: 39px;
+      border-radius: 28px;
+      box-shadow: 0.711px 0.711px 0.711px 0px rgba(255, 255, 255, 0.30) inset;
+      backdrop-filter: blur(11.379929542541504px);
+      padding: 12px 26px 13px 22px;
+      gap: 5px;
+    }
+  }
+
+  @include mobile{
+    height: 45px;
+    border-radius: 40px;
+    box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.30) inset;
+    backdrop-filter: blur(16px);
+    gap: 6px;
+    padding:  12px 45px 13px;
+  }
+
+  span{
+    color: var(--white);
+    text-align: center;
+    font-family: var(--second-family);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include desktop {
+      @include for-tablet {
+        font-size: 16px;
+      }
+    }
+
+    @include tablet{
+      @include for-mobile{
+        font-size: 13px;
+      }
+    }
+
+    @include mobile{
+      font-size: 16px;
+    }
+  }
+
+  &__icon{
     display: flex;
-    width: 24px;
-    aspect-ratio: 1;
+
+    svg,img{
+      width: 11px;
+      height: 16px;
+      flex-shrink: 0;
+      position: relative;
+
+      @include desktop {
+        @include for-tablet {
+          width: 9px;
+          height: 13px;
+          top: 2px;
+        }
+      }
+
+      @include tablet{
+        @include for-mobile{
+          width: 10px;
+height: 11.25px;
+top: 1px;
+        }
+      }
+
+      @include mobile{
+        width: 9px;
+        height: 13px;
+        top: 1px;
+      }
+    }
   }
 
   &:hover {
-    outline-color: var(--br-a);
-    background: rgba(0, 15, 159, 0.15);
+    background: var(--green);
+    border-color: var(--green);
   }
 
   &:disabled {
@@ -279,6 +357,12 @@
     pointer-events: none;
   }
 }
+
+
+
+
+
+
 
 .green-btn {
   transition: all 0.4s;

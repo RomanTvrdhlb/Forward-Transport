@@ -9,4 +9,5 @@ import './components/anchor.js';
 import './components/toTop.js';
 
 import './components/textarea.js';
+import './components/clipText.js';
 

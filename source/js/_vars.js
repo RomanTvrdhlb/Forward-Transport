@@ -9,6 +9,8 @@ export default {
   footer: document.querySelector('footer'),
 
   reviewsSliders: document.querySelectorAll('.reviews-slider'),
+  mainSliders: document.querySelectorAll('.main-slider'),
+  gallerySliders: document.querySelectorAll('.gallery-slider'),
 
 
   infoSliders: document.querySelectorAll('.info-slider'),

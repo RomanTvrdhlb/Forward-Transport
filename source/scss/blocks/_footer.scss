@@ -21,7 +21,7 @@
     margin-right: var(--container-offset);
   }
 
-  @include for-desktop{
+  @include for-desktop {
     padding: 65px 0 58px;
   }
 
@@ -34,14 +34,44 @@
   }
 
   @include tablet {
+    --container-offset: 21px;
+    
     border-radius: 14.224px;
     margin-bottom: clamp(9px, 1.953vw, 20px);
     padding: 30px 0;
   }
 
-  @include mobile {
+  @include small-tablet {
     padding: 35px 0 20px;
     border-radius: 20px;
+  }
+
+  @include mobile{
+    --container-offset: 10px;
+  }
+
+  .container {
+    max-width: 100%;
+
+    @include for-desktop {
+      padding: 0 clamp(50px, 3.614vw, 60px) 0 clamp(70px, 5.06vw, 84px);
+    }
+
+    @include desktop {
+      @include for-laptop {
+        padding: 0 clamp(36px, 3.5211vw, 50px) 0 clamp(50px, 4.9296vw, 70px);
+      }
+    }
+
+    @include laptop {
+      @include for-mobile {
+        padding: 0 clamp(20px, 3.516vw, 36px) 0 clamp(20px, 4.883vw, 50px);
+      }
+    }
+
+    @media (max-width: (875px)) {
+      padding: 0 20px;
+    }
   }
 
   &__box {
@@ -74,13 +104,13 @@
     }
 
     @include tablet {
-      @include for-mobile {
+      @include for-small-tablet {
         width: 140px;
         height: 16.5px;
       }
     }
 
-    @include mobile {
+    @include small-tablet {
       width: 190px;
       height: 23px;
       justify-self: center;
@@ -111,7 +141,7 @@
     }
 
     @include tablet {
-      @include for-mobile {
+      @include for-small-tablet {
         font-size: 10px;
         line-height: 140%;
 
@@ -119,7 +149,7 @@
       }
     }
 
-    @include mobile {
+    @include small-tablet {
       text-align: center;
       font-size: 12px;
       line-height: 18px;
@@ -130,27 +160,44 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: clamp(147px, 12.5352vw, 178px);
+    gap: clamp(117px, 9.337vw, 155px);
+
+    .socials {
+      min-width: clamp(248px, 17.952vw, 298px);
+
+      @include desktop {
+        min-width: clamp(176px, 17.4648vw, 248px);
+      }
+
+      @include tablet {
+        min-width: 176px;
+      }
+    }
 
     @include desktop {
       @include for-tablet {
-        gap: clamp(104px, 10.3521vw, 147px);
+        gap: clamp(104px, 9.1549vw, 130px);
       }
     }
 
     @include tablet {
-      @include for-mobile {
-        gap: clamp(30px, 7.3239vw, 104px);
+      @include for-small-tablet {
+        gap: clamp(30px, 10.156vw, 104px);
       }
     }
 
-    @include mobile {
+    @include small-tablet {
       gap: 30px;
       grid-template-columns: 100%;
-    
-      .socials{
+
+      .socials {
         order: -1;
         margin-bottom: 14px;
+
+        &__link {
+          width: 26px;
+          height: 25px;
+        }
       }
     }
   }
@@ -167,14 +214,14 @@
       }
     }
 
-    @include tablet {
-      @include for-mobile {
+    @include laptop {
+      @include for-small-tablet {
         width: 170px;
         height: 21px;
       }
     }
 
-    @include mobile {
+    @include small-tablet {
       width: 310px;
       height: 39px;
     }
@@ -186,24 +233,28 @@
     }
   }
 
-  &__top{
+  &__top {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 129px;
+    gap: clamp(107px, 6.446vw, 129px);
 
-    @include desktop {
+    @media (max-width: (1480px)) {
       @include for-tablet {
-        gap: 107px;
+        gap: 95px;
       }
     }
 
     @include tablet {
-      @include for-mobile {
-        gap: 117px;
+      @media (min-width: (1000px)) {
+        gap: 80px;
       }
     }
 
-    @include mobile {
+    @media (max-width: (999px)) {
+      gap: clamp(20px, 4.004vw, 40px);
+    }
+
+    @include small-tablet {
       gap: 40px;
       grid-template-columns: 100%;
     }
@@ -216,22 +267,43 @@
       display: grid;
       grid-template-columns: repeat(3, auto);
       height: fit-content;
-      gap: 12px 84px;
+      gap: 12px clamp(71px, 5.06vw, 84px);
 
-      @include desktop{
+      @include desktop {
         gap: 10px 71px;
       }
 
-      @include tablet{
+      @include laptop {
         gap: 10px 50px;
       }
-      
-      @include mobile{
-        gap: 16px;
+
+      @media (max-width: (875px)) {
+        gap: 10px 20px;
       }
 
-      li{
+      @include small-tablet {
+        gap: 16px;
+        max-width: 550px;
+        width: 100%;
+      }
+
+      @include mobile {
+        grid-template-columns: auto 1fr;
+        gap: 16px 48px;
+      }
+
+      li {
         display: flex;
+
+        &:last-of-type {
+          @include for-small-tablet {
+            display: contents;
+          }
+
+          @include small-tablet {
+            grid-column: 1/-1;
+          }
+        }
       }
 
       a {
@@ -244,15 +316,24 @@
         line-height: normal;
         white-space: nowrap;
 
-        @include desktop{
-        font-size: 13px;
+        @include desktop {
+          font-size: 13px;
         }
-  
-        @include tablet{
-          @include for-mobile{
-          font-family: var(--third-family);
-          font-size: 10px;
-          line-height: 14px;
+
+        @include laptop {
+          @include for-tablet {
+            font-size: clamp(10px, 1.048vw, 13px);
+          }
+
+          @include for-small-tablet {
+            font-family: var(--third-family);
+            line-height: 14px;
+          }
+        }
+
+        @include tablet {
+          @include for-small-tablet {
+            font-size: 10px;
           }
         }
 
@@ -260,9 +341,19 @@
           color: var(--green-2);
         }
       }
+
+      &.footer__nav-sublist {
+        margin-top: 28px;
+        gap: 20px;
+        display: flex;
+
+        @include for-small-tablet {
+          display: contents;
+        }
+      }
     }
 
-    @include mobile {
+    @include small-tablet {
       align-items: center;
     }
   }
@@ -271,18 +362,28 @@
     display: flex;
     flex-direction: column;
     grid-gap: 12px;
-   
+    min-width: clamp(248px, 17.952vw, 298px);
+
     @include desktop {
-        gap: 10px;
+      gap: 10px;
+      min-width: clamp(176px, 17.4648vw, 248px);
+    }
+
+    @include laptop {
+      min-width: 176px;
+    }
+
+    @include small-tablet {
+      margin-top: 4px;
     }
 
     ul:not([class]) {
       display: flex;
       flex-direction: column;
       grid-gap: 12px;
-   
+
       @include desktop {
-          gap: 10px;
+        gap: 10px;
       }
 
       li {
@@ -300,17 +401,17 @@
 
           @include desktop {
             @include for-tablet {
-              font-size: clamp(10px, .9155vw, 13px);
+              font-size: clamp(10px, 0.9155vw, 13px);
             }
           }
-      
+
           @include tablet {
             @include for-mobile {
               font-size: 10px;
             }
           }
-      
-          @include mobile {
+
+          @include small-tablet {
             font-size: 13px;
           }
         }
@@ -327,28 +428,28 @@
           text-underline-offset: 3px;
           text-decoration-color: transparent;
 
-          i{
+          i {
             text-decoration: underline;
             text-underline-offset: 3px;
             font-style: normal;
             color: var(--white);
-            transition: text-decoration-color .3s;
+            transition: text-decoration-color 0.3s;
             text-decoration-color: var(--white);
           }
 
           @include desktop {
             @include for-tablet {
-              font-size: clamp(10px, .9155vw, 13px);
+              font-size: clamp(10px, 0.9155vw, 13px);
             }
           }
-      
+
           @include tablet {
             @include for-mobile {
               font-size: 10px;
             }
           }
-      
-          @include mobile {
+
+          @include small-tablet {
             font-size: 13px;
           }
 
@@ -356,43 +457,13 @@
             color: var(--green-2);
             text-decoration-color: inherit;
 
-            i{
+            i {
               color: var(--green-2);
               text-decoration-color: transparent;
             }
           }
-       
         }
-        
       }
     }
-
-   
   }
-
-
-}
-
-
-
-
-
-
-
-
-
-@include desktop {
-  @include for-tablet {
-    
-  }
-}
-
-@include tablet {
-  @include for-mobile {
-    
-  }
-}
-
-@include mobile {
- 
 }
