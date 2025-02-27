@@ -1,0 +1,60 @@
+body.article {
+  @include tablet {
+    --container-offset: 21px;
+  }
+
+  @include mobile {
+    --container-offset: 10px;
+  }
+
+  .editor-section{
+    .editor{
+      img{
+        float: right;
+        position: relative;
+        z-index: 1;
+        width: 377px;
+        aspect-ratio: 1;
+        border-radius: 17px;
+        margin-bottom: 50px;
+        margin-left: clamp(35px, 2.924vw, 50px);
+        
+        &::before{
+          position: absolute;
+          z-index: 1;
+          content: '';
+          border-radius: inherit;
+          inset: 0;
+          opacity: 0.2;
+          background: #779684;
+          pointer-events: none;
+        }
+  
+        @include desktop{
+          margin-left: 30px;
+          margin-bottom: 30px;
+
+          @include for-tablet{
+            border-radius: clamp(10px, .9859vw, 14px);
+            width: clamp(250px, 22.6761vw, 322px);
+          }
+        }
+
+        @include tablet{
+          @include for-mobile{
+            width: clamp(160px, 24.414vw, 250px);
+            border-radius: 10px;
+          }
+        }
+
+        @include mobile{
+          border-radius: 14px;
+          width: 160px;
+          float: initial;
+          margin: 0 auto 30px;
+          display: block;
+        }
+      }
+    }
+  }
+}

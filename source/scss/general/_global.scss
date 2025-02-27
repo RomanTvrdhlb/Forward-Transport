@@ -314,8 +314,8 @@ select:-webkit-autofill:focus {
         line-height: 125%;
 
         svg {
-          width: clamp(10px, .9155vw, 13px);
-          height: clamp(10px, .9155vw, 13px);
+          width: clamp(10px, 0.9155vw, 13px);
+          height: clamp(10px, 0.9155vw, 13px);
         }
       }
     }
@@ -507,11 +507,106 @@ select:-webkit-autofill:focus {
       }
 
       color: var(--grey);
+      font-family: var(--second-family);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 144.444%;
+
+      @include desktop {
+        @include for-tablet {
+          font-size: clamp(12px, 1.1268vw, 16px);
+          line-height: 150%;
+        }
+      }
+
+      @include tablet {
+        @include for-mobile {
+          font-size: 12px;
+          line-height: 16px;
+          gap: 6px;
+        }
+      }
+
+      @include mobile {
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      b,
+      strong {
+        font-weight: 700;
+      }
+
+      &::before {
+        content: "";
+        flex-shrink: 0;
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: var(--grey);
+        border-radius: 50%;
+
+        @include tablet {
+          @include for-mobile {
+            width: 4px;
+            height: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  ol:not([class]) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    counter-reset: li;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    li {
+      counter-increment: li;
+      color: var(--grey);
+      font-family: var(--second-family);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+
+      @include desktop {
+        @include for-tablet {
+          font-size: clamp(12px, 1.1268vw, 16px);
+          line-height: 150%;
+        }
+      }
+
+      @include tablet {
+        @include for-mobile {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+
+      @include mobile {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px;
+      }
+
+      &::before {
+        content: counter(li) ".";
+        margin-right: 4px;
+        display: inline-block;
+        color: var(--grey);
         font-family: var(--second-family);
         font-size: 18px;
         font-style: normal;
         font-weight: 300;
-        line-height: 144.444%;
+        line-height: 26px;
 
         @include desktop {
           @include for-tablet {
@@ -524,88 +619,20 @@ select:-webkit-autofill:focus {
           @include for-mobile {
             font-size: 12px;
             line-height: 16px;
-            gap: 6px;
           }
         }
 
         @include mobile {
           font-size: 15px;
+          font-style: normal;
+          font-weight: 300;
           line-height: 20px;
-        }
-
-        b,
-        strong {
-          font-weight: 700;
-        }
-
-      &::before {
-        content: "";
-        flex-shrink: 0;
-        display: block;
-        width: 6px;
-        height: 6px;
-        background: var(--grey);
-        border-radius: 50%;
-
-        @include tablet{
-          @include for-mobile{
-            width: 4px;
-            height: 4px;
-          }
-        }
-      }
-    }
-  }
-
-  ol:not([class]) {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 8px;
-    margin-bottom: 32px;
-    counter-reset: li;
-
-    li {
-      counter-increment: li;
-
-      &::before {
-        content: counter(li) ".";
-        display: inline-block;
-        font-family: var(--third-family);
-        font-weight: 400;
-        font-size: clamp(24px, 2.4306vw, 35px);
-        line-height: 102%;
-        color: var(--cl-e);
-      }
-    }
-
-    ol {
-      grid-gap: 0;
-      li {
-        &::before {
-          font-family: var(--font-family);
-          font-size: clamp(14px, 1.3194vw, 19px);
-          line-height: 139%;
-          font-weight: 400;
-          margin-right: 4px;
-        }
-
-        font-family: var(--font-family);
-        font-size: clamp(14px, 1.3194vw, 19px);
-        line-height: 139%;
-        color: var(--cl-e);
-
-        * {
-          font-family: var(--font-family);
-          font-size: clamp(14px, 1.3194vw, 19px);
-          line-height: 139%;
-          color: var(--cl-e);
-          margin: 0;
         }
       }
     }
   }
 
   img {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
 }

@@ -214,35 +214,18 @@
   }
 }
 
-
-
-
-
-
-
-
 .swiper-pagination {
   display: flex;
   align-items: center;
-  grid-gap: clamp(16px, 1.3889vw, 20px);
+  grid-gap: 20px;
 
   &-bullet {
     border-radius: 100%;
     display: block;
-    width: clamp(16px, 1.3889vw, 20px);
-    height: clamp(16px, 1.3889vw, 20px);
-    background-color: var(--bg-a);
-    border: 1px solid var(--br-c);
     transition: all 0.3s;
     cursor: pointer;
-
-    &-active {
-      border: clamp(4px, 0.4167vw, 6px) solid var(--br-c);
-    }
   }
 }
-
-
 
 .transparent-btn {
   transition: all 0.4s;

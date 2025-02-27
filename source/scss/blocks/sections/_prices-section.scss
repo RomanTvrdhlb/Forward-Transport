@@ -144,4 +144,20 @@
       justify-content: flex-start;
     }
   }
+
+  &__content{
+    .prices-list{
+      margin-bottom: 84px;
+
+      @include desktop{
+        @include for-tablet{
+          margin-bottom:clamp(50px, 5.8333vw, 70px)
+        }
+      }
+
+      @include tablet{
+        margin-bottom:clamp(30px, 4.883vw, 50px)
+      }
+    }
+  }
 }

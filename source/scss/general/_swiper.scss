@@ -139,4 +139,6 @@ $colors: (
 	}
 }
 
-
+.swiper-horizontal {
+	touch-action: pan-y;
+  }

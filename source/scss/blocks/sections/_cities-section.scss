@@ -5,7 +5,14 @@
 
   .container {
     position: static;
-    padding: 0;
+
+    @media (min-width: (1700px)) {
+      padding: 0;
+    }
+
+    @media (max-width: (900px)) {
+      padding: 0;
+    }
   }
 
   @media (min-width: (1706px)) {

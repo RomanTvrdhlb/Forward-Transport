@@ -10,4 +10,5 @@ import './components/toTop.js';
 
 import './components/textarea.js';
 import './components/clipText.js';
+import './components/datapicker.js';
 

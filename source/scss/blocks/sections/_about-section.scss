@@ -1,22 +1,372 @@
 .about-section {
-  margin-bottom: clamp(45px, 4.1667vw, 60px);
+  z-index: 1;
+  position: relative;
+  max-width: 1660px;
+  overflow: hidden;
+  background: var(--green);
+  border-radius: 20px;
+
+  padding: 84px 0;
+
+  @media (min-width: (1706px)) {
+    margin: 0 auto 120px;
+  }
+
+  @media (max-width: (1705px)) {
+    @include for-laptop {
+      margin: 0 30px clamp(70px, 7.0423vw, 100px);
+    }
+  }
+
+  @include desktop {
+    @include for-tablet {
+      padding: clamp(50px, 5.8333vw, 70px) 0 clamp(59px, 8.008vw, 82px);
+    }
+  }
+
+  @include laptop {
+    @include for-tablet {
+      border-radius: clamp(10px, 1.1667vw, 14px);
+      margin: 0 var(--container-offset) clamp(70px, 7.0423vw, 100px);
+    }
+  }
+
+  @include tablet {
+    padding: clamp(30px, 4.883vw, 50px) 0 clamp(30px, 5.762vw, 59px);
+    border-radius: 10px;
+    margin: 0 var(--container-offset) clamp(50px, 6.836vw, 70px);
+  }
+
+  @include mobile {
+    border-radius: 14px;
+  }
+
+  .container {
+    @include mobile {
+      padding: 0 20px;
+    }
+  }
+
+  &__image {
+    width: clamp(560px, 40.602vw, 674px);
+    height: 370px;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 19px;
+    filter: drop-shadow(-10.826px 2.406px 22.374px rgba(0, 0, 0, 0.10));
+     
+    picture,img{
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    &::before{
+      position: absolute;
+      content: '';
+      inset: 0;
+      border-radius: inherit;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.1;
+      transition: all .2s;
+      background: var(--grey);
+    }
+
+    &-btn{
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      width: 95px;
+      aspect-ratio: 1;
+      display: flex;
+
+      svg{
+        transition: all .3s;
+        width: 100%;
+        height: 100%;
+      }
+
+      @include desktop {
+        @include for-tablet {
+          width: clamp(56px, 6.5833vw, 79px);
+        }
+      }
   
-  &__box {
+      @include tablet {
+        @include for-mobile {
+          width: clamp(44px, 9.722vw, 56px);
+        }
+      }
+  
+      @include mobile {
+        width: 44px;
+      }  
+    }
+
+    @include desktop {
+      @include for-tablet {
+        filter: drop-shadow(-9px 2px 18.6px rgba(0, 0, 0, 0.10));
+        width: clamp(398px, 38.889vw, 560px);
+        height: clamp(219px, 25.6667vw, 308px);
+        border-radius: clamp(11px, 1.3333vw, 16px);
+      }
+    }
+
+    @include tablet {
+      @include for-mobile {
+        filter: drop-shadow(-6.401px 1.422px 13.229px rgba(0, 0, 0, 0.10));
+        width: clamp(320px, 38.867vw, 398px);
+        height: 219px;
+        border-radius: 11px;
+      }
+    }
+
+    @include small-tablet{
+      order: -1;
+      width: 100%;
+      height: clamp(170px, 51.823vw, 398px);
+    }
+
+    @include mobile {
+      filter: drop-shadow(-9px 2px 18.6px rgba(0, 0, 0, 0.10));
+      border-radius: 16px;
+    }
+    
+    @include ios{
+      height: 170px;
+    }
+    
+    &:hover{
+      &::before{
+        opacity: .2;
+      }
+
+      .about-section__image{
+        &-btn{
+          svg{
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 36px;
+
+    @include desktop {
+      @include for-tablet {
+        gap: clamp(21px, 2.5vw, 30px);
+      }
+    }
+
+    @include tablet {
+      @include for-small-tablet {
+        gap: 21px;
+      }
+    }
+
+    @include small-tablet{
+      grid-template-columns: 100%;
+      gap: 30px;
+    }
+
+    p { 
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      color: var(--white);
+      font-family: var(--second-family);
+
+      @include for-desktop{
+        min-height: 243px;
+      }
+
+      @include for-tablet{
+        display: flex;
+        align-items: center;
+      }
+
+      @include desktop {
+        @include for-tablet {
+          font-size: clamp(12px, 1.3333vw, 16px);
+          line-height: 150%;
+          min-height: clamp(144px, 16.8333vw, 202px);
+        }
+      }
+
+      @include tablet {
+        @include for-small-tablet{
+          min-height: 144px;
+        }
+        @include for-mobile {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+
+      @include small-tablet{
+        order: -2;
+      }
+
+      @include mobile {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
-    grid-gap: clamp(25px, 4.1667vw, 60px);
+    gap: 51px;
+
+    @include desktop {
+      @include for-tablet {
+        gap: clamp(28px, 3.3333vw, 40px);
+      }
+    }
+
+    @include tablet {
+      @include for-mobile {
+        gap: 28px;
+      }
+    }
+
+    @include small-tablet{
+      display: contents;
+    }
+
+    @include mobile {
+      gap: 30px;
+    }
   }
 
+  &__btns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 54px;
 
-  .container{
-      max-width: 100%;
-      padding: 0;
+    @include desktop {
+      @include for-tablet {
+        gap: clamp(22px, 3.3333vw, 40px);
+      }
+    }
+
+    @include tablet {
+      gap: 10px 22px;
+    }
+
+    @include small-tablet{
+      order: 1;
+    }
+
+    @include mobile{
+      justify-content: center;
+    }
+
+    .transparent-btn{
+      span{
+        @include desktop {
+          @include for-tablet {
+            font-size: clamp(13px, 1.1268vw, 16px);
+          }
+        }
+      }
+    }
+
+    .main-btn {
+      min-width: clamp(223px, 18.5915vw, 264px);
+      padding: 6px;
+
+      @include desktop {
+        padding: 5px;
+        min-width: clamp(180px, 18.5833vw, 223px);
+      }
+
+      @include tablet {
+        min-width: 164px;
+        padding: 4px;
+      }
+
+      @include mobile {
+        min-width: 202px;
+        padding: 5px;
+      }
+
+      &__icon {
+        width: 48px;
+        height: 48px;
+
+        @include desktop {
+          height: 45px;
+          width: 45px;
+        }
+
+        @include tablet {
+          width: 31px;
+          height: 31px;
+        }
+
+        @include mobile {
+          width: 35px;
+
+          height: 35px;
+        }
+      }
+
+      span:not([class]) {
+        font-family: var(--second-family);
+        font-size: clamp(16px, 1.2676vw, 18px);
+
+        @include desktop {
+          @include for-tablet {
+            font-size: clamp(13px, 1.1268vw, 16px);
+          }
+        }
+
+        @include tablet {
+          font-size: 13px;
+        }
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+    }
   }
 
-  & + .cta-section{
-    margin-top: calc(clamp(45px, 4.1667vw, 60px) * -1);
-  }
+  &__box {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 84px;
 
-  
- 
+    .title {
+      color: var(--cl-a);
+    }
+
+    @include desktop {
+      @include for-tablet {
+        gap: clamp(50px, 4.9296vw, 70px);
+      }
+    }
+
+    @include tablet {
+      gap: clamp(30px, 4.883vw, 50px);
+    }
+
+    @include mobile {
+    }
+  }
 }

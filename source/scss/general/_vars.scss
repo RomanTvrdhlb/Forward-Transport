@@ -5,6 +5,7 @@
   --body-font-size: 16px;
   --content-width: clamp(1180px, 83.041vw, 1420px);
   --content-width-mode: 1660px;
+  
 
   --container-offset: clamp(16px, 1.6667vw, 24px);
   --container-offset-mode: clamp(21px, 2.1127vw, 30px);
@@ -17,14 +18,9 @@
     --container-offset: 30px;
     --container-offset-mode: 30px;
   }
-
-  --content-width-mini: 952px;
  
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --container-width-mode: calc(var(--content-width-mode) + (var(--container-offset) * 2));
-
-
-  --container-width-mini: calc(var(--content-width-mini) + (var(--container-offset) * 2));
 
   // --------------- default scroll variables ---------------
   --scrollbar-thumb:  #6c947c;

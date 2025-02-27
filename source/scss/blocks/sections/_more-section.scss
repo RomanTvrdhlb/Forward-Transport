@@ -1,48 +1,58 @@
-.more-section{
-  margin: clamp(40px, 4.1667vw, 60px) 0;
-
-  &:last-of-type{
-    margin-bottom: clamp(40px, 4.1667vw, 60px);
+.more-section {
+  @include for-desktop {
+    margin-bottom: 120px;
   }
 
-  &__box{
-      display: flex;
-      flex-direction: column;
-      grid-gap: clamp(35px, 3.3333vw, 48px);
-
-      .main-top{
-         align-items: center;
-         text-align: center; 
-      }
+  @include desktop {
+    @include for-tablet {
+      margin-bottom: clamp(70px, 8.3333vw, 100px);
+    }
   }
 
-  &__top{
-    padding: 6px 0;
+  @include tablet {
+    margin-bottom: clamp(50px, 6.836vw, 70px);
+  }
+
+  @media (min-width: (1700px)) {
+    .container {
+      max-width: calc(1558px + (var(--container-offset) * 2));
+    }
+  }
+
+  &__box {
     display: flex;
-    grid-gap: 15px;
+    flex-direction: column;
 
-    @include for-mobile{
-      align-items: center;
-      justify-content: space-between;
+    @include for-desktop {
+      gap: 84px;
     }
 
-    @include mobile{
-      flex-direction: column;
+    @include desktop {
+      gap: clamp(30px, 4.883vw, 50px);
     }
 
-    .transparent-btn, .main-btn{
-      height: clamp(46px, 4.0972vw, 59px);
-      padding: clamp(11px, 1.25vw, 18px) clamp(20px, 1.9444vw, 28px) clamp(10px, 1.0417vw, 15px);
+    .main-btn {
+      align-self: center;
 
       @include mobile{
-        width: 100%;
+        display: none;
       }
     }
-  }
 
-  &.white{
-      padding: clamp(40px, 4.1667vw, 60px) 0;
-      margin: 0;
-      background: var(--bg-a);
+    .accordion {
+      padding: 0;
+
+      &__btn {
+        color: var(--green);
+
+        svg {
+          transform: scaleY(1);
+        }
+      }
+
+      &__item {
+        border-color: var(--light-gray);
+      }
+    }
   }
 }

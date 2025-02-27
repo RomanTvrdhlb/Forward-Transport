@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="En">
+@include('partials/head.html')
+
+<body class="quote">
+
+  @include('partials/header.html')
+
+  <main>
+    <ul class="breadcrumbs">
+      <li>
+        <a href="/">Главная</a>
+      </li>
+      <li>Välj tjänst</li>
+    </ul>
+
+    <section class="form-section">
+      <div class="container">
+        <div class="form-section__box">
+          <div class="form-section__top">
+            <h1 class="form-section__title title">Get a quote</h1>
+            <p class="form-section__subtitle">välj tjänst </p>
+          </div>
+
+          <div class="form-section__tabs" data-tabs-parrent>
+            <ul class="form-section__nav">
+              <li class="form-section__item">
+               <a href="#apartment" class="form-section__btn active disabled" type="button" data-tab="1">APARTAMENT MOVING</a>
+              </li>
+              <li class="form-section__item">
+                <a href="#relocation" class="form-section__btn disabled" type="button" data-tab="2">OFFICE RELOCATION</a>
+               </li>
+               <li class="form-section__item">
+                <a href="#moving" class="form-section__btn disabled" type="button" data-tab="3">MOVING SERVICES</a>
+               </li>
+            </ul>
+
+            <ul class="form-section__content">
+              <li class="form-section__item active disabled" data-tab-content="1">
+                <form class="quote-form">
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">personal information</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__label" for="name">
+                        <span class="quote-form__label-heading">Name*</span>
+                        <input class="quote-form__input" name="name" id="name" type="text" placeholder="Patrick Lindel">
+                      </label>
+                      <label class="quote-form__label" for="email">
+                        <span class="quote-form__label-heading">E-post*</span>
+                        <input class="quote-form__input" name="email" id="email" type="email" placeholder="Berezhna@gmail.com">
+                      </label>
+                      <label class="quote-form__label" for="tel">
+                        <span class="quote-form__label-heading">Telefonnummer*</span>
+                        <input class="quote-form__input" name="tel" id="tel" type="tel" placeholder="+380442997545">
+                      </label>
+                      <label class="quote-form__label calendar" for="date" data-calendar>
+                        <span class="quote-form__label-heading">Vilket dstum vill du flytta*</span>
+                        <input class="quote-form__input" type="text" name="date" id="date" value="21.12.2025">
+                        <button class="quote-form__calendar-btn">
+                          <svg width='22' height='22'>
+                            <use href='img/sprite/sprite.svg#calendar'></use>
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">откуда переезд</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__label" for="from-index">
+                        <span class="quote-form__label-heading">Почтовый номер и район*</span>
+                        <input class="quote-form__input" name="from-index" id="from-index" type="text">
+                      </label>
+                      <label class="quote-form__label" for="from-address">
+                        <span class="quote-form__label-heading">Адрес*</span>
+                        <input class="quote-form__input" name="from-address" id="from-address" type="text">
+                      </label>
+                      <label class="quote-form__label" for="from-buildind">
+                        <span class="quote-form__label-heading">Тип жилья*</span>
+                        <select class="quote-form__input" name="from-buildind" id="from-buildind">
+                          <option value="вилла">вилла</option>
+                          <option value="вилла">апартаменты</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-square">
+                        <span class="quote-form__label-heading">Площадь*</span>
+                        <input maxlength="15" class="quote-form__input" name="from-square" id="from-square" type="text">
+                        <span class="quote-form__label-text">kvm</span>
+                      </label>
+                      <label class="quote-form__label" for="from-floor">
+                        <span class="quote-form__label-heading">Этаж*</span>
+                        <input class="quote-form__input" name="from-floor" id="from-floor" type="text">
+                      </label>
+                      <label class="quote-form__label" for="from-lift">
+                        <span class="quote-form__label-heading">Наличие лифта*</span>
+                        <select class="quote-form__input" name="from-lift" id="from-lift">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-basement">
+                        <span class="quote-form__label-heading">Подвал/чердак*</span>
+                        <select class="quote-form__input" name="from-basement" id="from-basement">
+                          <option value="подвал">подвал</option>
+                          <option value="чердак">чердак</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-cleaning">
+                        <span class="quote-form__label-heading">Уборка после переезда*</span>
+                        <select class="quote-form__input" name="from-cleaning" id="from-cleaning">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-help">
+                        <span class="quote-form__label-heading">Помощь в упаковке*</span>
+                        <select class="quote-form__input" name="from-help" id="from-help">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-box">
+                        <span class="quote-form__label-heading">Необходимость в коробках*</span>
+                        <select class="quote-form__input" name="from-box" id="from-box">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">куда переезд</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__label" for="for-index">
+                        <span class="quote-form__label-heading">Почтовый номер и район*</span>
+                        <input class="quote-form__input" name="for-index" id="for-index" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-address">
+                        <span class="quote-form__label-heading">Адрес*</span>
+                        <input class="quote-form__input" name="for-address" id="for-address" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-buildind">
+                        <span class="quote-form__label-heading">Тип жилья*</span>
+                        <select class="quote-form__input" name="for-buildind" id="for-buildind">
+                          <option value="вилла">вилла</option>
+                          <option value="вилла">апартаменты</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="for-square">
+                        <span class="quote-form__label-heading">Площадь*</span>
+                        <input class="quote-form__input" name="for-square" id="for-square" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-floor">
+                        <span class="quote-form__label-heading">Этаж*</span>
+                        <input class="quote-form__input" name="for-floor" id="for-floor" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-lift">
+                        <span class="quote-form__label-heading">Наличие лифта*</span>
+                        <select class="quote-form__input" name="for-lift" id="for-lift">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="for-basement">
+                        <span class="quote-form__label-heading">Подвал/чердак*</span>
+                        <select class="quote-form__input" name="for-basement" id="for-basement">
+                          <option value="подвал">подвал</option>
+                          <option value="чердак">чердак</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="for-cleaning">
+                        <span class="quote-form__label-heading">Уборка после переезда*</span>
+                        <select class="quote-form__input" name="for-cleaning" id="for-cleaning">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">дополнительные услуги</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="warehousing" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Warehousing</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="cleaning" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Cleaning</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="liquidation" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Liquidation</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="installation" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Installation/disassembly/packing</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="transport-piano" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Transportation of pianos</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" nname="quote-checkbox" id="transport-furniture" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Transportation of furniture</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="transport-safe" type="checkbox" checked>
+                        <span class="quote-form__checkbox-heading">Transportation of safes</span>
+                      </label>
+                    </div>
+
+                    <p class="quote-form__descr">If necessary, please specify the quantity in the comments</p>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">комментарий</span>
+
+                    <div class="quote-form__group">
+                      <label for="quote-textarea" class="quote-form__label">
+                        <textarea class="quote-form__textarea" name="quote-textarea" id="quote-textarea" placeholder="Berezhna@gmail.com"></textarea>
+                      </label>
+
+                      <label for="quote-file" class="quote-form__file">
+                        <input type="file" name="quote-file" id="quote-file" accept=".jpg,.jpeg,.png,.pdf">
+
+                        <svg width='24' height='24'>
+                          <use href='img/sprite/sprite.svg#clip'></use>
+                        </svg>
+                      </label>
+                    </div>
+
+                  </fieldset>
+
+                  <button class="main-btn">
+                    <span>отправить</span>
+
+                    <span class="main-btn__icon">
+                      <svg width='24' height='24'>
+                        <use href='img/sprite/sprite.svg#arrow'></use>
+                      </svg>
+                    </span>
+                  </button>
+                </form>
+              </li>
+
+              <li class="form-section__item" data-tab-content="2">
+                  <form class="quote-form">
+                    <fieldset class="quote-form__fieldset">
+                      <span class="quote-form__heading">personal information</span>
+
+                      <div class="quote-form__labels">
+                        <label class="quote-form__label" for="company-name">
+                          <span class="quote-form__label-heading">Company name</span>
+                          <input class="quote-form__input" name="company-name" id="company-name" type="text" placeholder="Patrick Lindel">
+                        </label>
+                        <label class="quote-form__label" for="company-number">
+                          <span class="quote-form__label-heading">Company number</span>
+                          <input class="quote-form__input" name="company-number" id="company-number" type="text" placeholder="Berezhna@gmail.com">
+                        </label>
+                        <label class="quote-form__label" for="name">
+                          <span class="quote-form__label-heading">Name*</span>
+                          <input class="quote-form__input" name="name" id="name" type="text" placeholder="Patrick Lindel">
+                        </label>
+                        <label class="quote-form__label" for="email">
+                          <span class="quote-form__label-heading">E-post*</span>
+                          <input class="quote-form__input" name="email" id="email" type="email" placeholder="Berezhna@gmail.com">
+                        </label>
+                        <label class="quote-form__label" for="tel">
+                          <span class="quote-form__label-heading">Telefonnummer*</span>
+                          <input class="quote-form__input" name="tel" id="tel" type="tel" placeholder="+380442997545">
+                        </label>
+                        <label class="quote-form__label calendar" for="date"  data-calendar>
+                          <span class="quote-form__label-heading">Vilket dstum vill du flytta*</span>
+                          <input class="quote-form__input" type="text" name="date" id="date" value="21.12.2025">
+                          <button class="quote-form__calendar-btn">
+                            <svg width='22' height='22'>
+                              <use href='img/sprite/sprite.svg#calendar'></use>
+                            </svg>
+                          </button>
+                        </label>
+                      </div>
+                    </fieldset>
+
+                    <fieldset class="quote-form__fieldset">
+                      <span class="quote-form__heading">откуда переезд</span>
+
+                      <div class="quote-form__labels">
+                        <label class="quote-form__label" for="from-index">
+                          <span class="quote-form__label-heading">Почтовый номер и район*</span>
+                          <input class="quote-form__input" name="from-index" id="from-index" type="text">
+                        </label>
+                        <label class="quote-form__label" for="from-address">
+                          <span class="quote-form__label-heading">Адрес*</span>
+                          <input class="quote-form__input" name="from-address" id="from-address" type="text">
+                        </label>
+                        <label class="quote-form__label" for="from-buildind">
+                          <span class="quote-form__label-heading">Тип жилья*</span>
+                          <select class="quote-form__input" name="from-buildind" id="from-buildind">
+                            <option value="вилла">вилла</option>
+                            <option value="вилла">апартаменты</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="from-square">
+                          <span class="quote-form__label-heading">Площадь*</span>
+                          <input class="quote-form__input" name="from-square" id="from-square" type="text">
+                          <span class="quote-form__label-text">kvm</span>
+                        </label>
+                        <label class="quote-form__label" for="from-floor">
+                          <span class="quote-form__label-heading">Этаж*</span>
+                          <input class="quote-form__input" name="from-floor" id="from-floor" type="text">
+                        </label>
+                        <label class="quote-form__label" for="from-lift">
+                          <span class="quote-form__label-heading">Наличие лифта*</span>
+                          <select class="quote-form__input" name="from-lift" id="from-lift">
+                            <option value="да">да</option>
+                            <option value="нет">нет</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="from-basement">
+                          <span class="quote-form__label-heading">Подвал/чердак*</span>
+                          <select class="quote-form__input" name="from-basement" id="from-basement">
+                            <option value="подвал">подвал</option>
+                            <option value="чердак">чердак</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="from-cleaning">
+                          <span class="quote-form__label-heading">Уборка после переезда*</span>
+                          <select class="quote-form__input" name="from-cleaning" id="from-cleaning">
+                            <option value="да">да</option>
+                            <option value="нет">нет</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="from-help">
+                          <span class="quote-form__label-heading">Помощь в упаковке*</span>
+                          <select class="quote-form__input" name="from-help" id="from-help">
+                            <option value="да">да</option>
+                            <option value="нет">нет</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="from-box">
+                          <span class="quote-form__label-heading">Необходимость в коробках*</span>
+                          <select class="quote-form__input" name="from-box" id="from-box">
+                            <option value="да">да</option>
+                            <option value="нет">нет</option>
+                          </select>
+                        </label>
+                      </div>
+                    </fieldset>
+
+                    <fieldset class="quote-form__fieldset">
+                      <span class="quote-form__heading">куда переезд</span>
+
+                      <div class="quote-form__labels">
+                        <label class="quote-form__label" for="for-index">
+                          <span class="quote-form__label-heading">Почтовый номер и район*</span>
+                          <input class="quote-form__input" name="for-index" id="for-index" type="text">
+                        </label>
+                        <label class="quote-form__label" for="for-address">
+                          <span class="quote-form__label-heading">Адрес*</span>
+                          <input class="quote-form__input" name="for-address" id="for-address" type="text">
+                        </label>
+                        <label class="quote-form__label" for="for-buildind">
+                          <span class="quote-form__label-heading">Тип жилья*</span>
+                          <select class="quote-form__input" name="for-buildind" id="for-buildind">
+                            <option value="вилла">вилла</option>
+                            <option value="вилла">апартаменты</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="for-square">
+                          <span class="quote-form__label-heading">Площадь*</span>
+                          <input class="quote-form__input" name="for-square" id="for-square" type="text">
+                        </label>
+                        <label class="quote-form__label" for="for-floor">
+                          <span class="quote-form__label-heading">Этаж*</span>
+                          <input class="quote-form__input" name="for-floor" id="for-floor" type="text">
+                        </label>
+                        <label class="quote-form__label" for="for-lift">
+                          <span class="quote-form__label-heading">Наличие лифта*</span>
+                          <select class="quote-form__input" name="for-lift" id="for-lift">
+                            <option value="да">да</option>
+                            <option value="нет">нет</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="for-basement">
+                          <span class="quote-form__label-heading">Подвал/чердак*</span>
+                          <select class="quote-form__input" name="for-basement" id="for-basement">
+                            <option value="подвал">подвал</option>
+                            <option value="чердак">чердак</option>
+                          </select>
+                        </label>
+                        <label class="quote-form__label" for="for-cleaning">
+                          <span class="quote-form__label-heading">Уборка после переезда*</span>
+                          <select class="quote-form__input" name="for-cleaning" id="for-cleaning">
+                            <option value="да">да</option>
+                            <option value="нет">нет</option>
+                          </select>
+                        </label>
+                      </div>
+                    </fieldset>
+
+                    <fieldset class="quote-form__fieldset">
+                      <span class="quote-form__heading">дополнительные услуги</span>
+
+                      <div class="quote-form__labels">
+                        <label class="quote-form__checkbox">
+                          <input class="quote-form__checkbox-input" name="quote-checkbox" id="warehousing" type="checkbox">
+                          <span class="quote-form__checkbox-heading">Warehousing</span>
+                        </label>
+                        <label class="quote-form__checkbox">
+                          <input class="quote-form__checkbox-input" name="quote-checkbox" id="cleaning" type="checkbox">
+                          <span class="quote-form__checkbox-heading">Cleaning</span>
+                        </label>
+                        <label class="quote-form__checkbox">
+                          <input class="quote-form__checkbox-input" name="quote-checkbox" id="liquidation" type="checkbox">
+                          <span class="quote-form__checkbox-heading">Liquidation</span>
+                        </label>
+                        <label class="quote-form__checkbox">
+                          <input class="quote-form__checkbox-input" name="quote-checkbox" id="installation" type="checkbox">
+                          <span class="quote-form__checkbox-heading">Installation/disassembly/packing</span>
+                        </label>
+                        <label class="quote-form__checkbox">
+                          <input class="quote-form__checkbox-input" name="quote-checkbox" id="transport-piano" type="checkbox">
+                          <span class="quote-form__checkbox-heading">Transportation of pianos</span>
+                        </label>
+                        <label class="quote-form__checkbox">
+                          <input class="quote-form__checkbox-input" nname="quote-checkbox" id="transport-furniture" type="checkbox">
+                          <span class="quote-form__checkbox-heading">Transportation of furniture</span>
+                        </label>
+                        <label class="quote-form__checkbox">
+                          <input class="quote-form__checkbox-input" name="quote-checkbox" id="transport-safe" type="checkbox" checked>
+                          <span class="quote-form__checkbox-heading">Transportation of safes</span>
+                        </label>
+                      </div>
+
+                      <p class="quote-form__descr">If necessary, please specify the quantity in the comments</p>
+                    </fieldset>
+
+                    <fieldset class="quote-form__fieldset">
+                      <span class="quote-form__heading">комментарий</span>
+
+                      <div class="quote-form__group">
+                        <label for="quote-textarea" class="quote-form__label">
+                          <textarea class="quote-form__textarea" name="quote-textarea" id="quote-textarea" placeholder="Berezhna@gmail.com"></textarea>
+                        </label>
+
+                        <label for="quote-file" class="quote-form__file">
+                          <input type="file" name="quote-file" id="quote-file" accept=".jpg,.jpeg,.png,.pdf">
+
+                          <svg width='24' height='24'>
+                            <use href='img/sprite/sprite.svg#clip'></use>
+                          </svg>
+                        </label>
+                      </div>
+
+                    </fieldset>
+
+                    <button class="main-btn">
+                      <span>отправить</span>
+
+                      <span class="main-btn__icon">
+                        <svg width='24' height='24'>
+                          <use href='img/sprite/sprite.svg#arrow'></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </form>
+              </li>
+
+              <li class="form-section__item" data-tab-content="3">
+                <form class="quote-form">
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">service type</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="warehousing" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Warehousing</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="cleaning" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Cleaning</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="liquidation" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Liquidation</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="installation" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Installation/disassembly/packing</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="transport-piano" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Transportation of pianos</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" nname="quote-checkbox" id="transport-furniture" type="checkbox">
+                        <span class="quote-form__checkbox-heading">Transportation of furniture</span>
+                      </label>
+                      <label class="quote-form__checkbox">
+                        <input class="quote-form__checkbox-input" name="quote-checkbox" id="transport-safe" type="checkbox" checked>
+                        <span class="quote-form__checkbox-heading">Transportation of safes</span>
+                      </label>
+                    </div>
+
+                    <p class="quote-form__descr">If necessary, please specify the quantity in the comments</p>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">personal information</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__label" for="name">
+                        <span class="quote-form__label-heading">Name*</span>
+                        <input class="quote-form__input" name="name" id="name" type="text" placeholder="Patrick Lindel">
+                      </label>
+                      <label class="quote-form__label" for="email">
+                        <span class="quote-form__label-heading">E-post*</span>
+                        <input class="quote-form__input" name="email" id="email" type="email" placeholder="Berezhna@gmail.com">
+                      </label>
+                      <label class="quote-form__label" for="tel">
+                        <span class="quote-form__label-heading">Telefonnummer*</span>
+                        <input class="quote-form__input" name="tel" id="tel" type="tel" placeholder="+380442997545">
+                      </label>
+                      <label class="quote-form__label calendar" for="date"  data-calendar>
+                        <span class="quote-form__label-heading">Vilket dstum vill du flytta*</span>
+                        <input class="quote-form__input" type="text" name="date" id="date" value="21.12.2025">
+                        <button class="quote-form__calendar-btn">
+                          <svg width='22' height='22'>
+                            <use href='img/sprite/sprite.svg#calendar'></use>
+                          </svg>
+                        </button>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">откуда переезд</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__label" for="from-index">
+                        <span class="quote-form__label-heading">Почтовый номер и район*</span>
+                        <input class="quote-form__input" name="from-index" id="from-index" type="text">
+                      </label>
+                      <label class="quote-form__label" for="from-address">
+                        <span class="quote-form__label-heading">Адрес*</span>
+                        <input class="quote-form__input" name="from-address" id="from-address" type="text">
+                      </label>
+                      <label class="quote-form__label" for="from-buildind">
+                        <span class="quote-form__label-heading">Тип жилья*</span>
+                        <select class="quote-form__input" name="from-buildind" id="from-buildind">
+                          <option value="вилла">вилла</option>
+                          <option value="вилла">апартаменты</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-square">
+                        <span class="quote-form__label-heading">Площадь*</span>
+                        <input class="quote-form__input" name="from-square" id="from-square" type="text">
+                        <span class="quote-form__label-text">kvm</span>
+                      </label>
+                      <label class="quote-form__label" for="from-floor">
+                        <span class="quote-form__label-heading">Этаж*</span>
+                        <input class="quote-form__input" name="from-floor" id="from-floor" type="text">
+                      </label>
+                      <label class="quote-form__label" for="from-lift">
+                        <span class="quote-form__label-heading">Наличие лифта*</span>
+                        <select class="quote-form__input" name="from-lift" id="from-lift">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-basement">
+                        <span class="quote-form__label-heading">Подвал/чердак*</span>
+                        <select class="quote-form__input" name="from-basement" id="from-basement">
+                          <option value="подвал">подвал</option>
+                          <option value="чердак">чердак</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-cleaning">
+                        <span class="quote-form__label-heading">Уборка после переезда*</span>
+                        <select class="quote-form__input" name="from-cleaning" id="from-cleaning">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-help">
+                        <span class="quote-form__label-heading">Помощь в упаковке*</span>
+                        <select class="quote-form__input" name="from-help" id="from-help">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="from-box">
+                        <span class="quote-form__label-heading">Необходимость в коробках*</span>
+                        <select class="quote-form__input" name="from-box" id="from-box">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">куда переезд</span>
+
+                    <div class="quote-form__labels">
+                      <label class="quote-form__label" for="for-index">
+                        <span class="quote-form__label-heading">Почтовый номер и район*</span>
+                        <input class="quote-form__input" name="for-index" id="for-index" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-address">
+                        <span class="quote-form__label-heading">Адрес*</span>
+                        <input class="quote-form__input" name="for-address" id="for-address" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-buildind">
+                        <span class="quote-form__label-heading">Тип жилья*</span>
+                        <select class="quote-form__input" name="for-buildind" id="for-buildind">
+                          <option value="вилла">вилла</option>
+                          <option value="вилла">апартаменты</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="for-square">
+                        <span class="quote-form__label-heading">Площадь*</span>
+                        <input class="quote-form__input" name="for-square" id="for-square" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-floor">
+                        <span class="quote-form__label-heading">Этаж*</span>
+                        <input class="quote-form__input" name="for-floor" id="for-floor" type="text">
+                      </label>
+                      <label class="quote-form__label" for="for-lift">
+                        <span class="quote-form__label-heading">Наличие лифта*</span>
+                        <select class="quote-form__input" name="for-lift" id="for-lift">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="for-basement">
+                        <span class="quote-form__label-heading">Подвал/чердак*</span>
+                        <select class="quote-form__input" name="for-basement" id="for-basement">
+                          <option value="подвал">подвал</option>
+                          <option value="чердак">чердак</option>
+                        </select>
+                      </label>
+                      <label class="quote-form__label" for="for-cleaning">
+                        <span class="quote-form__label-heading">Уборка после переезда*</span>
+                        <select class="quote-form__input" name="for-cleaning" id="for-cleaning">
+                          <option value="да">да</option>
+                          <option value="нет">нет</option>
+                        </select>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="quote-form__fieldset">
+                    <span class="quote-form__heading">комментарий</span>
+
+                    <div class="quote-form__group">
+                      <label for="quote-textarea" class="quote-form__label">
+                        <textarea class="quote-form__textarea" name="quote-textarea" id="quote-textarea" placeholder="Berezhna@gmail.com"></textarea>
+                      </label>
+
+                      <label for="quote-file" class="quote-form__file">
+                        <input type="file" name="quote-file" id="quote-file" accept=".jpg,.jpeg,.png,.pdf">
+
+                        <svg width='24' height='24'>
+                          <use href='img/sprite/sprite.svg#clip'></use>
+                        </svg>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <button class="main-btn">
+                    <span>отправить</span>
+
+                    <span class="main-btn__icon">
+                      <svg width='24' height='24'>
+                        <use href='img/sprite/sprite.svg#arrow'></use>
+                      </svg>
+                    </span>
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  @include('partials/footer.html')
+  @include('partials/modals.html')
+  <script defer src="js/main.js"></script>
+</body>
+
+
+</html>

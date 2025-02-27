@@ -1,0 +1,65 @@
+body.service{
+
+    @include tablet{
+        --container-offset: 21px;
+      }
+    
+      @include mobile{
+        --container-offset: 10px;
+      }
+
+      
+    .first-section{
+        padding: clamp(76px, 5.843vw, 97px) 0;
+      
+        @include desktop {
+          @include for-tablet {
+            padding: clamp(68px, 5.3521vw, 76px) 0 clamp(35px, 5.3521vw, 76px);
+          }
+        }
+      
+        @include tablet {
+            padding: clamp(40px, 6.641vw, 68px) 0 35px;
+        }
+      
+        @include mobile {
+          padding-bottom: 50px;
+        }
+
+        &__bg{
+            picture,img{
+                filter: none;
+            }
+        }
+
+        &__box{
+            gap: 50px;
+            @include desktop {
+                @include for-tablet {
+                 gap: clamp(35px, 2.8169vw, 40px);
+                }
+              }
+            
+              @include tablet {
+                gap: clamp(30px, 3.418vw, 35px);
+              }
+        }
+
+      .title {
+        width: 100%;
+        max-width: 100%;
+
+        @include mobile{
+            height: 115px;
+            display: inline-flex;
+            align-items: center;
+        }
+      }
+    }
+
+    .service-section{
+      @media (max-width: (1010px)) {
+        display: none;
+      }
+    }
+}

@@ -11,6 +11,8 @@ export default {
   reviewsSliders: document.querySelectorAll('.reviews-slider'),
   mainSliders: document.querySelectorAll('.main-slider'),
   gallerySliders: document.querySelectorAll('.gallery-slider'),
+  serviceSliders: document.querySelectorAll('.service-slider'),
+  blogSliders: document.querySelectorAll('.blog-slider'),
 
 
   infoSliders: document.querySelectorAll('.info-slider'),
